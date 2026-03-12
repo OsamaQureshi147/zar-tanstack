@@ -180,19 +180,73 @@ button {
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  /* ---------------- SPACING SCALE ---------------- */
+  /* Defining --spacing-* automatically creates:
+     - p-*, m-*, gap-*, space-*, w-*, h-*, top-*, etc. 
+     Using your fluid clamp values here makes the whole UI responsive. */
 
-  --shadow-2xs: var(--shadow-2xs);
-  --shadow-xs: var(--shadow-xs);
-  --shadow-sm: var(--shadow-sm);
-  --shadow: var(--shadow);
-  --shadow-md: var(--shadow-md);
-  --shadow-lg: var(--shadow-lg);
-  --shadow-xl: var(--shadow-xl);
-  --shadow-2xl: var(--shadow-2xl);
+  --spacing-1: clamp(0.25rem, 0.2rem + 0.1vw, 0.35rem);
+  --spacing-2: clamp(0.5rem, 0.45rem + 0.15vw, 0.6rem);
+  --spacing-3: clamp(0.75rem, 0.65rem + 0.25vw, 0.9rem);
+  --spacing-4: clamp(1rem, 0.9rem + 0.35vw, 1.25rem);
+  --spacing-5: clamp(1.25rem, 1.1rem + 0.5vw, 1.75rem);
+  --spacing-6: clamp(1.5rem, 1.3rem + 0.7vw, 2.25rem);
+  --spacing-8: clamp(2rem, 1.7rem + 1vw, 3rem);
+  --spacing-10: clamp(2.5rem, 2rem + 1.2vw, 3.75rem);
+  --spacing-12: clamp(3rem, 2.4rem + 1.6vw, 4.5rem);
+
+  /* Added small fixed increments for tight UI (buttons, icons, etc.) */
+  --spacing-px: 1px;
+  --spacing-0-5: 0.125rem;
+  --spacing-1-5: 0.375rem;
+
+  /* ---------------- FONTS ---------------- */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.85rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.2vw, 0.95rem);
+  --text-base: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.5vw, 1.35rem);
+  --text-xl: clamp(1.25rem, 1.15rem + 0.8vw, 1.75rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2.25rem);
+  --text-3xl: clamp(1.875rem, 1.6rem + 1.5vw, 3rem);
+  --text-4xl: clamp(2.25rem, 1.8rem + 2vw, 3.75rem);
+
+  /* ---------------- CONTAINERS & MAX-WIDTHS ---------------- */
+  --container-xs: 480px;
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1440px;
+
+  /* Added: Good for limiting text width for readability */
+  --width-prose: 65ch;
+  --width-content: 80rem;
+
+  /* ---------------- BORDER RADIUS ---------------- */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* ---------------- SHADOWS ---------------- */
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 10px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 30px rgb(0 0 0 / 0.15);
+
+  /* ---------------- TRANSITIONS & Z-INDEX ---------------- */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-normal: 200ms;
+  --duration-slow: 350ms;
+
+  /* Added: Essential for Shadcn components like Modals and Tooltips */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-modal: 1050;
+  --z-index-popover: 1070;
+  --z-index-tooltip: 1080;
 
   --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
   --tracking-tight: calc(var(--tracking-normal) - 0.025em);
